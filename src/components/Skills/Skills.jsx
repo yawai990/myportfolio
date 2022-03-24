@@ -18,7 +18,7 @@ const Skills = () => {
             <SubContainer px='2' my='3'>
                 <Header my='2'>What I Capable of ?</Header>
 
-                <SubContainer flex='flex'>
+                <SubContainer flex='flex' justify='center'>
                     {skillData.map(skill => {
                         return <motion.div style={{ margin: '10px' }} key={skill.id}
                             whileInView={{ x: [100, 0], opacity: [0, 1] }}

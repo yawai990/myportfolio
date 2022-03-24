@@ -17,11 +17,12 @@ body{
     display:flex;
 }`
 export const Wrapper = Styled.section`
-    width:80vw;
+    width:${({ width }) => width || 80}%;
     height:100vh;
     overflow-y:scroll;
     overflow-x:hidden;
     scroll-behavior: smooth;
+    transition:all 0.3s ease;
     @media screen and (max-width:768px){
         width:100%;
 
@@ -39,7 +40,7 @@ export const Container = Styled.div`
     padding:${({ py }) => py || 0}rem ${({ px }) => px || 0}rem;
 `;
 export const SubContainer = Styled.div`
-    width:${({ width }) => width && width}rem;
+    width:${({ width }) => width && width}%;
     height:${({ height }) => height && height}rem;
     background-color:${props => props.bg || 'none'};
     margin:${({ my }) => my || 0}rem ${({ mx }) => mx || 0}rem;

@@ -5,12 +5,13 @@ export const CardContainer = Styled(Container)`
         position:relative;
         &::before{
             content:'';
-            width:7px;
+            width:5px;
             height:90%;
             background:#b1b1b1;
             position:absolute;
-            top:7%;
-            left:85px;
+            top:5%;
+            left:13%;
+            transform:translatex(-50%);
             z-index:-1;
         }
 `

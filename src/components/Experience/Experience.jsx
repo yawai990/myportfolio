@@ -12,16 +12,16 @@ const Experience = () => {
 
                 <Header fs='23' my='1' mx='1.4'>Work Experience</Header>
 
-                <CardContainer px='2' bg='red'>
+                <CardContainer px='2'>
 
                     {Data.map((d, ind) => {
-                        return <SubContainer key={d.id} width='60' flex='flex' justify='space-around' my='0.2' py='1.3' px='1.3'>
+                        return <SubContainer key={d.id} flex='flex' justify='center' my='0.2' py='1.3' px='1.3'>
 
-                            <Circle size='2.5' mx='1' bg={`${ind % 2 === 0 ? '#FF6B6B' : '#FFD93D'}`}>
+                            <Circle size='2.5' bg={`${ind % 2 === 0 ? '#FF6B6B' : '#FFD93D'}`}>
                                 <FaPencilAlt size='20' />
                             </Circle>
 
-                            <Card width='50' py='1' px='2'>
+                            <Card width='70' py='1' px='2' mx='2'>
                                 <h3>{d.position}</h3>
                                 <p>{d.company}</p>
                                 <p>{d.year}</p>
