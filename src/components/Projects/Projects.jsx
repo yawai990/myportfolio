@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { Container, SubContainer, Button } from "../../GlobalStyle";
-import { PjtCard, PjtImg, PjtBody } from "../Style/Project";
+import { PjtCard, PjtContainer, PjtImg, PjtBody } from "../Style/Project";
 import { data } from './Data';
+import { AppWrap } from "../../HOC";
 
 const Projects = () => {
     const [cat, setCat] = useState('all');
@@ -26,7 +27,7 @@ const Projects = () => {
         }, 600);
     }
     return (
-        <Container id='project'>
+        <Container>
             <h1>My Work</h1>
 
             <SubContainer flex='flex' justify='center' align='center'>
@@ -41,7 +42,7 @@ const Projects = () => {
                 })}
             </SubContainer>
 
-            <SubContainer flex='flex' justify='center' align='flex-start' py='2'>
+            <PjtContainer flex='flex' justify='center' align='center' py='2'>
                 {filterPjt.map((pjt, ind) => {
                     return <motion.div key={ind} animate={animateCard}>
                         <PjtCard width='15' height='20' m='2' bg='white'>
@@ -66,8 +67,8 @@ const Projects = () => {
                         </PjtCard>
                     </motion.div>
                 })}
-            </SubContainer>
+            </PjtContainer>
         </Container>
     )
 }
-export default Projects;
+export default AppWrap(Projects, 'project');

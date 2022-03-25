@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Container, Header, SubContainer, Button } from "../../GlobalStyle";
-import { Form, FormControl, FormMessage, Connect, ContactMe, ContactIMG } from "../Style/Contact";
+import { Form, FormControl, Footer, SbContainer, FormMessage, Connect, ContactMe, ContactIMG } from "../Style/Contact";
 import { image } from '../constants';
+import { AppWrap } from '../../HOC';
 
 const initMessage = {
     name: '',
@@ -52,19 +53,16 @@ const Contact = () => {
             alert('thank you')
         }
         console.log(sendData)
-
         setSendData(initMessage);
-
-
     };
 
     return (
-        <Container id='contact' px='2' height='80'>
+        <Container>
             <Header fs='18' text="#666">Get In Touch</Header>
 
             <Header mx='2' my='1'>CONTACT</Header>
 
-            <SubContainer className="contact" flex='flex' justify='space-between' px='2'>
+            <SbContainer className="contact" flex='flex' justify='space-between' px='2'>
 
                 <Connect flex='flex' fd='column' style={{ marginRight: '2rem' }}>
 
@@ -153,9 +151,9 @@ const Contact = () => {
                     <Button bg='#3d71ff' py='10' px='15' type="submit">Send Message</Button>
 
                 </Form>
-            </SubContainer>
+            </SbContainer>
 
         </Container >
     )
 }
-export default Contact;
+export default AppWrap(Contact, 'contact');

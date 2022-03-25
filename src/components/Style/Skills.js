@@ -1,5 +1,9 @@
 import Styled from 'styled-components';
+import { SubContainer } from "../../GlobalStyle";
 
+export const SkillContainer = Styled(SubContainer)`
+    
+`
 export const Card = Styled.div`
     width:${({ width }) => width && width}rem;
     height:${({ height }) => height && height}rem;
@@ -12,6 +16,11 @@ export const Card = Styled.div`
     align-items:${({ align }) => align && align};
     flex-direction:${({ fd }) => fd && fd};
     padding:${({ p }) => p || 0}em;
+    font-family: 'Noto Sans', sans-serif;
+    p{
+        font-family: 'Noto Sans', sans-serif;
+
+    }
     img{
         width:75%;
         height:75%;
@@ -19,12 +28,12 @@ export const Card = Styled.div`
         object-position:center;
     }
     @media screen and (max-width:768px){
-        width:100%;
-        border:2px solid red;
+        width:90%;
     }
     @media screen and (max-width:500px){
-        width:450px;
-        border:2px solid blue;
+        width:80%;
+        height:fit-content;
+        flex-direction:column;
     }
 `
 
@@ -33,9 +42,15 @@ export const CardLogo = Styled(Card)`
     border:${({ border }) => border || 'none'};
     box-shadow:0 0 8px ${({ bs }) => bs || ''};
     border:3px solid ${props => props.theme.bg};
-    @media screen and(max - width: 768px){
-    width: 4rem;
-    height: 4rem;
+
+    @media screen and (max-width: 768px){
+        width: 3rem;
+        height: 3rem;
+}
+    @media screen and (max-width:500px){
+        width:40px;
+        height:40px;
+
 }
 `
 

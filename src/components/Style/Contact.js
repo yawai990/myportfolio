@@ -1,9 +1,26 @@
 import Styled from 'styled-components';
+import { SubContainer } from "../../GlobalStyle";
 
 export const Form = Styled.form`
     padding:${({ py }) => py || 1}em ${({ px }) => px || 4}rem;
-`
 
+    @media screen and (max-width:768px){
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+    }
+    @media screen and (max-width:500px){
+        padding:0;
+    }
+`
+export const SbContainer = Styled(SubContainer)`
+
+    @media screen and (max-width:500px){
+        justify-content:center;
+    }
+`
 export const FormControl = Styled.div`
     width:300px;
     background-color:${props => props.bg || props.theme.bg};
@@ -51,6 +68,14 @@ export const Connect = Styled.div`
     flex-wrap:wrap;
     margin:${({ my, mx }) => `${my || 0.5}rem ${mx || 0}rem`};
     padding:${({ px, py }) => `${py || 5}px ${px || 10}px`} ;
+
+    @media screen and (max-width:768px){
+        width:100%;
+        display:flex;
+        justify-content:flex-start;
+        align-items:center;
+        flex-direction:column;
+    }
 `
 export const ContactMe = Styled.a`
     width:100%;

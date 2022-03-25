@@ -6,7 +6,7 @@ import { Data } from './Data';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 
 const Navbar = ({ width, PlayNav, navActive }) => {
-    return <Nav width={width} py='2'>
+    return <Nav style={{ overflowY: `${navActive ? 'scroll' : 'hidden'}` }} width={width} py='2'>
 
         <NavHead active='true' style={{ marginBottom: '2rem' }}>
 
@@ -32,8 +32,9 @@ const Navbar = ({ width, PlayNav, navActive }) => {
                     <span style={{ display: navActive ? 'inline' : 'none' }}>{link.link}</span>
                 </Link>
             })}
-
         </Group>
+
+        <p style={{ display: `${navActive ? 'block' : 'none'}`, padding: '10px', marginBottom: '2rem' }}>All rights reserverd.&copy; Copyright by Yawai.2022</p>
     </Nav>
 }
 export default Navbar;

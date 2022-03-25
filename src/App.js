@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Navbar, About, Experience, Home, Projects, Skills, Contact } from './components';
-import { Global, Wrapper } from './GlobalStyle';
+import { Global, Wrapper, Section } from './GlobalStyle';
 
 //design link = https://preview.colorlib.com/#jackson
 
@@ -12,15 +12,17 @@ const theme = {
     bg: '#1A5F7A',
     headColor: '#214151'
 };
+
 const App = () => {
-    const [navActive, setNavActive] = useState(true);
+    const [navActive, setNavActive] = useState(false);
 
     const PlayNav = () => setNavActive(!navActive);
 
     return (
         <ThemeProvider theme={theme}>
-            <>
-                <Global />
+
+            <Global />
+            <Section>
                 <Navbar width={`${navActive ? 15 : 5}`} PlayNav={PlayNav} navActive={navActive} />
                 <Wrapper width={`${navActive ? 85 : 95}`}>
                     <Home />
@@ -30,7 +32,8 @@ const App = () => {
                     <About />
                     <Contact />
                 </Wrapper>
-            </>
+            </Section>
+
         </ThemeProvider>
     )
 }

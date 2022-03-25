@@ -2,7 +2,7 @@ import Styled, { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap')
-*{
+*,body,::before,::after{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -12,10 +12,33 @@ body{
     width:100vw;
     height:100vh;
     overflow:hidden;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-#root{
+.social-div{
+    width:35px;
+    height:35px;
+    border-radius:50%;
     display:flex;
-}`
+    justify-content:center;
+    align-items:center;
+    background:${props => props.theme.color};
+    color:${props => props.theme.bg};
+    text-decoration:none;   
+    overflow:hidden;
+    margin:10px 0;
+    svg{
+        width:80%;
+        height:80%;
+    }
+}
+`
+export const Section = Styled.section`
+    width:100%;
+    height:100%;
+    display:flex;
+`
 export const Wrapper = Styled.section`
     width:${({ width }) => width || 80}%;
     height:100vh;
@@ -25,26 +48,26 @@ export const Wrapper = Styled.section`
     transition:all 0.3s ease;
     @media screen and (max-width:768px){
         width:100%;
-
     }
 `
 export const Container = Styled.div`
     width:${({ width }) => width || 100}%;
-    min-height:${({ height }) => height || 100}vh;
+    min-height:${({ height }) => height || 100}%;
     display:${({ flex }) => flex && flex};
     justify-content:${({ justify }) => justify && justify};
     align-items:${({ align }) => align && align};
     flex-direction:${({ fd }) => fd && fd};
-    margin:${({ m }) => m && m}rem;
-    margin-left:${({ ml }) => ml || 0}rem;
-    padding:${({ py }) => py || 0}rem ${({ px }) => px || 0}rem;
+    padding:${({ px, py }) => `${py || 0}rem ${px || 0}rem`};
+    position:relative;
+    margin:0.5rem 0;
+
 `;
 export const SubContainer = Styled.div`
     width:${({ width }) => width && width}%;
-    height:${({ height }) => height && height}rem;
+    height:${({ height }) => height}rem;
     background-color:${props => props.bg || 'none'};
     margin:${({ my }) => my || 0}rem ${({ mx }) => mx || 0}rem;
-    margin-left:${({ ml }) => ml && ml}rem;
+    margin-left:${({ ml }) => ml || 0}rem;
     padding:${({ px, py }) => `${py || 0}rem ${px || 0}rem`} ;
     display:${({ flex }) => flex && flex};
     justify-content:${({ justify }) => justify && justify};
@@ -52,12 +75,13 @@ export const SubContainer = Styled.div`
     flex-direction:${({ fd }) => fd && fd};
     flex-wrap:wrap;
     position:relative;
+   
     @media screen and (max-width:768px){
         padding:0;
         margin:0 auto;
     }
     @media screen and (max-width:500px){
-        
+          width:100%;
     }
 `
 

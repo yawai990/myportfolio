@@ -1,5 +1,5 @@
 import Styled from 'styled-components';
-import { ThemeConsumer } from 'styled-components';
+import { SubContainer } from "../../GlobalStyle";
 
 export const PjtCard = Styled.div`
     width:${({ width }) => width || 15}rem;
@@ -7,8 +7,8 @@ export const PjtCard = Styled.div`
     background-color:${props => props.bg || props.theme.color};
     margin:${({ m }) => m || 0}rem;
     padding:${({ px, py }) => `${py || 0}px ${px || 0}px`} ;
-    display:${({ flex }) => flex && flex};
-    justify-content:${({ justify }) => justify && justify};
+    display:${({ flex }) => flex};
+    justify-content:${({ justify }) => justify || 'center'};
     align-items:${({ align }) => align && align};
     flex-direction:${({ fd }) => fd && fd};
     flex-wrap:wrap;
@@ -21,8 +21,12 @@ export const PjtCard = Styled.div`
         width:350px;
         height:400px;
     }
+    @media screen and (max-width:500px){
+        width:90%;
+    }
 `
-
+export const PjtContainer = Styled(SubContainer)`
+`
 export const PjtImg = Styled.div`
     width:${({ width }) => width || '100'}%;
     height:${({ height }) => height || '100'}%;
