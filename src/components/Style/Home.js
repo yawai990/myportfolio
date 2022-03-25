@@ -8,17 +8,17 @@ export const HeroContainer = Styled(Container)`
     }
 `
 export const SubHeroContainer = Styled(SubContainer)`
-    @media screen and (max-width:768px){
+    width:65%;
+    height:100%;
+    img{
         width:100%;
         height:100%;
-        position:absolute;
-        top:0;
-        left:0;
-        z-index:-1;
+        object-fit:cover;
+    }
 
-        div{
-            width:100%;
-        }
+    @media screen and (max-width:768px){
+        width:100%;
+        height:60%;
     }
 `
 export const Hero = Styled.div`
@@ -27,10 +27,11 @@ export const Hero = Styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    flex-directioin:column; 
+    flex-direction:column; 
 
     @media screen and (max-width:768px){
         width:100%;
+        height:60vh;
     }
 `
 
@@ -42,7 +43,7 @@ export const Text = Styled.h1`
 
 export const Pic = Styled.div`
     width:80%;
-    height:80%;
+    height:100%;
     position:absolute;
     bottom:0;
     left:50%;
@@ -56,4 +57,23 @@ export const Pic = Styled.div`
         object-fit:cover;
     }
 `
-// export const Intro = Styled.
+export const Hamburger = Styled.button`
+    width:40px;
+    height:40px;
+    border:none;
+    background:transparent;
+    position:absolute;
+    top:20px;
+    left:30px;
+    display:none;
+    cursor:pointer;
+    svg{
+        width:80%;
+        height:80%;
+        color:#444;
+    }
+     
+    @media screen and (max-width:768px){
+        display:block;
+    }
+`

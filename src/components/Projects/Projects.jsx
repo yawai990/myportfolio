@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
-import { Container, SubContainer, Button } from "../../GlobalStyle";
+import { Container, SubContainer, Header, Button } from "../../GlobalStyle";
 import { PjtCard, PjtContainer, PjtImg, PjtBody } from "../Style/Project";
 import { data } from './Data';
 import { AppWrap } from "../../HOC";
@@ -28,7 +28,7 @@ const Projects = () => {
     }
     return (
         <Container>
-            <h1>My Work</h1>
+            <Header fs='20' mx='1' text={props => props.theme.bg}>My Work</Header>
 
             <SubContainer flex='flex' justify='center' align='center'>
                 {['all', 'javascript', 'react', 'mern', 'mysql'].map((btn, id) => {

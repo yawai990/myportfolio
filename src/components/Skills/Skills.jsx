@@ -10,7 +10,7 @@ const Skills = () => {
         <Container d='flex' justify='center' align='flex-start'>
             <SubContainer px='1'>
 
-                <Header fs='27' my='1' mx='1'>My Skills</Header>
+                <Header text={props => props.theme.bg} fs='27' my='1' mx='1'>My Skills</Header>
 
                 <motion.p style={{ width: '80%', margin: 'auto', fontSize: '17px' }}
                     whileInView={{ opacity: [0, 1] }}>

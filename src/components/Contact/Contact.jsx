@@ -58,9 +58,9 @@ const Contact = () => {
 
     return (
         <Container>
-            <Header fs='18' text="#666">Get In Touch</Header>
+            <Header fs='18' mx='1' text={props => props.theme.bg}>Get In Touch</Header>
 
-            <Header mx='2' my='1'>CONTACT</Header>
+            <Header text={props => props.theme.bg} mx='2' my='1'>CONTACT</Header>
 
             <SbContainer className="contact" flex='flex' justify='space-between' px='2'>
 

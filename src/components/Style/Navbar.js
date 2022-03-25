@@ -4,7 +4,7 @@ import { Button } from '../../GlobalStyle';
 export const Nav = Styled.nav`
     width:${({ width }) => width || 20}%;
     height:${({ height }) => height || 100}vh;
-    background-color:${props => props.bg || props.theme.color};
+    background-color:${props => props.theme.bg};
     padding:${({ px, py }) => `${py || 0}rem ${px || 0}rem`} ;
     position:sticky;
     top:0;
@@ -49,7 +49,7 @@ export const Group = Styled.div`
 export const Link = Styled.a`
     display:block;
     text-decoration:none;
-    color:${props => props.text || props.theme.bg};
+    color:${props => props.text || props.theme.color};
     padding:${({ px, py }) => `${py || 5}px ${px || 10}px`} ;
     margin:${({ my, mx }) => `${my || 0}rem ${mx || 0}rem `};
     text-transform: capitalize;

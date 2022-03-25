@@ -1,34 +1,34 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { image } from '../constants';
-import { HeroContainer, SubHeroContainer,Text, Hero, Pic } from '../Style/Home';
+import { FaBars } from 'react-icons/fa';
+import { HeroContainer, SubHeroContainer, Hamburger, Text, Hero, Pic } from '../Style/Home';
 import { AppWrap } from "../../HOC";
+import { useGlobalContext } from "../Context/Context";
 
 const Home = () => {
   const txt = 'I am Yawai Aung';
   const textArr = txt.split('');
+  const { PlayModel, setModel } = useGlobalContext();
 
   return <HeroContainer flex='flex'>
 
+    <Hamburger onClick={PlayModel}>
+      <FaBars />
+    </Hamburger>
 
     <Hero>
+      <motion.div>
 
-      <div style={{ padding: '10px 15px' }}>
+        <motion.h5 style={{ margin: 0, fontSize: '2rem' }}>Hello! Welcome To My Portfolio</motion.h5>
+      </motion.div>
 
-        <motion.h5 style={{ margin: 0, fontSize: '2.5rem' }}>Hello! Welcome To My Portfolio</motion.h5>
+      <h5 style={{ margin: 0, fontSize: '2.4rem' }}>
+        <span>I'm </span>
+        <span>Yawai Aung</span>
+      </h5>
 
-        <h5 style={{ margin: 0, fontSize: '2.4rem' }}>
-          {textArr.map((text, ind) => {
-            return <motion.span key={ind} whileInView={{ x: [10, 0] }} whileHover={{ color: 'red' }}>
-              {text}
-            </motion.span>
-          })}
-        </h5>
-
-        <p>Front End Developer</p>
-
-
-      </div>
+      <p>Front End Developer</p>
 
     </Hero>
 
@@ -36,7 +36,7 @@ const Home = () => {
     <SubHeroContainer>
 
       <div className="img">
-        <img src={image.profile} alt="" />
+        <img src={image.programmer} alt="" />
       </div>
     </SubHeroContainer>
 

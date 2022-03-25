@@ -1,5 +1,5 @@
 import React from "react";
-import { Container,Header } from '../../GlobalStyle';
+import { Container, Header } from '../../GlobalStyle';
 import { Circle, Card, CardContainer, SbContainer } from "../Style/Experience";
 import { FaPencilAlt } from 'react-icons/fa';
 import { Data } from './Data';
@@ -8,9 +8,9 @@ import { AppWrap } from "../../HOC";
 const Experience = () => {
     return (
         <Container>
-            <Header fs='20' mx='1' text='#515E63'>Experience</Header>
+            <Header fs='20' mx='1' text={props => props.theme.bg}>Experience</Header>
 
-            <Header fs='23' my='1' mx='1.4'>Work Experience</Header>
+            <Header text={props => props.theme.bg} fs='23' my='1' mx='1.4'>Work Experience</Header>
 
             <CardContainer px='2'>
 

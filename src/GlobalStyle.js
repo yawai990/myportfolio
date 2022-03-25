@@ -94,8 +94,8 @@ export const Header = Styled.h1`
 
 export const Button = Styled.button`
     border:none;
-    background-color:${props => props.bg || props.theme.bg};
-    color:${props => props.text || props.theme.color};
+    background-color:${props => props.bg || props.theme.color};
+    color:${props => props.text || props.theme.bg};
     cursor:pointer;
     text-transform: uppercase;
     padding:${({ px, py }) => `${py || 5}px ${px || 10}px`} ;
