@@ -16,7 +16,7 @@ import bgWhite from '../assets/bgWhite.png';
 import BgDev from '../assets/BgDev.png';
 import mobile from '../assets/mobile.png';
 import email01 from '../assets/email01.png';
-import programmer from '../assets/programmer.png';
+import programmer from '../assets/programmer.svg';
 
 export default {
     programmer, BgDev, profile, email01, mobile, bgWhite, bootstrap, css, git, html, javascript, jquery, knx, myname, mysql, react, redux, sass, siemens

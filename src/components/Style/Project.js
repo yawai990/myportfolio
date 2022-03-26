@@ -4,7 +4,7 @@ import { SubContainer } from "../../GlobalStyle";
 export const PjtCard = Styled.div`
     width:${({ width }) => width || 15}rem;
     height:${({ height }) => height || 10}rem;
-    background-color:${props => props.bg || props.theme.color};
+    background-color:${props => props.bg || props.theme.cardBG};
     margin:${({ m }) => m || 0}rem;
     padding:${({ px, py }) => `${py || 0}px ${px || 0}px`} ;
     display:${({ flex }) => flex};

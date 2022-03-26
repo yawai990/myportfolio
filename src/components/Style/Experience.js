@@ -13,7 +13,7 @@ export const CardContainer = Styled(Container)`
             top:5%;
             left:13%;
             transform:translatex(-50%);
-            z-index:-1;
+            z-index:0;
         }
 
         @media screen and (max-width:768px){
@@ -43,7 +43,7 @@ export const SbContainer = Styled(SubContainer)`
 `
 
 export const Card = Styled(SubContainer)`
-    background:${props => props.bg || props.theme.color};
+    background:#C0D8C0;
     color:${props => props.text || props.theme.bg};
     p{
         font-family: 'Noto Sans', sans-serif;
@@ -52,13 +52,13 @@ export const Card = Styled(SubContainer)`
         content:'';
         width:20px;
         height:20px;
-        background:${props => props.bg || props.theme.color};
+        background:#C0D8C0;
         color:${props => props.text || props.theme.bg};
         position:absolute;
         border-radius:2px;
         top:10px;
         left:-8px;
-        z-index:-1;
+        z-index:1;
         transform:rotate(45deg)
     }
     @media screen and (max-width:768px){
@@ -77,9 +77,22 @@ export const Card = Styled(SubContainer)`
         }
     }
 `
+
+export const OutCircle = Styled.div`
+
+    width:2.8rem;
+    height:2.8rem;
+    border-radius:50%;
+    background:${props => props.theme.bg};
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-right:40px;
+}
+`
 export const Circle = Styled.div`
-    width:${({ size }) => size || '0'}rem;
-    height:${({ size }) => size || '0'}rem;
+    width:80%;
+    height:80%;
     border-radius:50%;
     background:${props => props.bg || props.theme.color};
     display:flex;
@@ -88,22 +101,6 @@ export const Circle = Styled.div`
     box-shadow:2px 2px 5px ${props => props.bg || props.theme.bg} inset,
               -2px -2px 5px ${props => props.bg || props.theme.bg} inset;
     margin:${({ my }) => my || 0}rem ${({ mx }) => mx || 0} rem;
-    position:relative;
-    margin-right:40px;
-
-    &::before{
-        content:'';
-        width:120%;
-        height:120%;
-        border-radius:50%;
-        background:${props => props.theme.bg};
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform:translate(-50%,-50%);
-        z-index:-1;
-    }
-
     svg{
         font-size:${({ size }) => size || 0}%;
     }

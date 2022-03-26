@@ -14,9 +14,8 @@ export const Social = ({ id }) => {
                 whileInView={{ scale: 1, opacity: 1 }}
                 whileHover={{
                     scale: 1.2,
-                    background: `
-                    ${link.id === 1 && 'red'}
-                    `}}
+                    backgroundColor: '#F56D91'
+                }}
                 transition={{ type: "spring", velocity: 10 }}
             >
                 {link.icon}

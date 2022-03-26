@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Header } from '../../GlobalStyle';
-import { Circle, Card, CardContainer, SbContainer } from "../Style/Experience";
+import { Circle, Card, CardContainer, SbContainer, OutCircle } from "../Style/Experience";
 import { FaPencilAlt } from 'react-icons/fa';
 import { Data } from './Data';
 import { AppWrap } from "../../HOC";
@@ -17,9 +17,11 @@ const Experience = () => {
                 {Data.map((d, ind) => {
                     return <SbContainer key={d.id} flex='flex' justify='center' my='0.2' py='1.3' px='1.3'>
 
-                        <Circle size='2.5' bg={`${ind % 2 === 0 ? '#FF6B6B' : '#FFD93D'}`}>
-                            <FaPencilAlt size='20' />
-                        </Circle>
+                        <OutCircle>
+                            <Circle bg={`${ind % 2 === 0 ? '#FF6B6B' : '#FFD93D'}`}>
+                                <FaPencilAlt size='20' />
+                            </Circle>
+                        </OutCircle>
 
                         <Card width='70' py='1' px='2' mx='2'>
                             <h3>{d.position}</h3>

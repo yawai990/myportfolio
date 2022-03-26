@@ -9,9 +9,12 @@ import { Global, Wrapper, Section } from './GlobalStyle';
 const theme = {
     header: '22px',
     text: '16px',
-    color: '#D9D7F1',
-    bg: 'rgba(34,34,34,1)',
-    headColor: '#fdfdfd'
+    color: '#F7F7F7',
+    bg: 'rgba(34,34,34,0.7)',
+    headColor: '#fdfdfd',
+    mainBG: '#F7F7F7',
+    navBG: '#FFB72B',
+    cardBG: '#B5FE83'
 };
 
 const App = () => {

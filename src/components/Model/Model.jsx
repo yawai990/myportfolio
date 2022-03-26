@@ -11,7 +11,7 @@ const Model = () => {
 
     const { model, PlayModel } = useGlobalContext();
 
-    return <ModelContainer style={{ transform: `translateX(-${model ? 100 : 0}%)` }}>
+    return <ModelContainer style={{ transform: `translateX(-${model ? 0 : 100}%)` }}>
 
         <Button onClick={PlayModel}>
             <FaTimes />

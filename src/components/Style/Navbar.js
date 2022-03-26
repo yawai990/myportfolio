@@ -4,19 +4,23 @@ import { Button } from '../../GlobalStyle';
 export const Nav = Styled.nav`
     width:${({ width }) => width || 20}%;
     height:${({ height }) => height || 100}vh;
-    background-color:${props => props.theme.bg};
+    background-color:${props => props.theme.navBG};
     padding:${({ px, py }) => `${py || 0}rem ${px || 0}rem`} ;
     position:sticky;
     top:0;
     left:0;
     transition:all 0.3s ease;
 
+    @media screen and (max-width:1024px){
+        padding:0 0.5rem;
+    }
+
     @media screen and (max-width:768px){
         display:none;
     }`
 export const NavHead = Styled.div`
     width:100%;
-    display:${({ active }) => active ? 'flex' : 'none'};
+    display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
@@ -72,4 +76,10 @@ export const Btn = Styled(Button)`
         width:80%;
         height:80%;
     }
+`
+
+export const Copy = Styled.p`
+    color:${props => props.theme.color};
+    padding: 10px;
+    margin-bottom: 2rem ;
 `

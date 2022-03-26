@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Container, Header, SubContainer, Button } from "../../GlobalStyle";
 import { Form, FormControl, Footer, SbContainer, FormMessage, Connect, ContactMe, ContactIMG } from "../Style/Contact";
 import { image } from '../constants';
 import { AppWrap } from '../../HOC';
+import axios from "axios";
+
+const API = axios.create({ baseURL: 'http://localhost:5000' })
 
 const initMessage = {
     name: '',
@@ -17,7 +20,7 @@ const Contact = () => {
     const [sendData, setSendData] = useState(initMessage);
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const errMessage = document.querySelector('.error');
@@ -50,9 +53,14 @@ const Contact = () => {
             errMessage.style.display = 'none';
             errMessage1.style.display = 'none';
             errMessage2.style.display = 'none';
-            alert('thank you')
+
+            API.post('/sendmail', sendData);
+
+            setTimeout(() => {
+                alert('email send')
+            }, 3000);
+
         }
-        console.log(sendData)
         setSendData(initMessage);
     };
 
@@ -67,7 +75,7 @@ const Contact = () => {
                 <Connect flex='flex' fd='column' style={{ marginRight: '2rem' }}>
 
                     <motion.div whileInView={{ x: [-100, 0], opacity: [0, 1] }} transition={{ duration: 0.7 }}>
-                        <ContactMe href="tel:09123456">
+                        <ContactMe href="mailto:yawaiaung.developer@gmail.com">
                             <ContactIMG>
                                 <img src={image.email01} alt="" />
                             </ContactIMG>
@@ -77,7 +85,7 @@ const Contact = () => {
                     </motion.div>
 
                     <motion.div whileInView={{ y: [-100, 0], opacity: [0, 1] }} transition={{ duration: 0.7, delay: 0.5 }}>
-                        <ContactMe href="tel:09123456" my='3'>
+                        <ContactMe href="tel:+959250364540" my='3'>
                             <ContactIMG>
                                 <img src={image.mobile} alt="" />
                             </ContactIMG>

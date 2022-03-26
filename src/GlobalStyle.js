@@ -16,6 +16,10 @@ body{
     padding:0;
     box-sizing:border-box;
 }
+
+#root{
+    background:${props => props.theme.mainBG}
+}
 .social-div{
     width:35px;
     height:35px;
@@ -23,8 +27,8 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:${props => props.theme.color};
-    color:${props => props.theme.bg};
+    background:${props => props.theme.bg};
+    color:${props => props.theme.mainBG};
     text-decoration:none;   
     overflow:hidden;
     margin:10px 0;
@@ -95,7 +99,7 @@ export const Header = Styled.h1`
 export const Button = Styled.button`
     border:none;
     background-color:${props => props.bg || props.theme.color};
-    color:${props => props.text || props.theme.bg};
+    color:${props => props.text || props.theme.mainBG};
     cursor:pointer;
     text-transform: uppercase;
     padding:${({ px, py }) => `${py || 5}px ${px || 10}px`} ;
