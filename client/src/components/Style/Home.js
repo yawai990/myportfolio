@@ -32,6 +32,9 @@ export const Hero = Styled.div`
     @media screen and (max-width:768px){
         width:100%;
         height:60vh;
+        .greeting{
+            text-align:center;
+        }
     }
 `
 

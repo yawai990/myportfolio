@@ -7,7 +7,7 @@ import { Social } from '../components/Social/Social';
 const AppWrap = (Component, idName) => function HOC() {
 
     return <Container id={idName} my='0' mx='0'>
-        <Social />
+        <Social id={idName} />
         <Component />
     </Container>
 }

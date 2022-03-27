@@ -30,15 +30,16 @@ export const CardContainer = Styled(Container)`
             align-items:center;                
             
             &::before{
-                left:11%;
+                left:10%;
             }
         }
 `
 export const SbContainer = Styled(SubContainer)`
         @media screen and (max-width:500px){
-            width:90%;
+            width:95%;
             padding:0;
             margin:10px 0;
+        
         }
 `
 
@@ -79,7 +80,6 @@ export const Card = Styled(SubContainer)`
 `
 
 export const OutCircle = Styled.div`
-
     width:2.8rem;
     height:2.8rem;
     border-radius:50%;
@@ -88,6 +88,9 @@ export const OutCircle = Styled.div`
     justify-content:center;
     align-items:center;
     margin-right:40px;
+    @media screen and (max-width:500px){
+        margin-right:10px;
+    }
 }
 `
 export const Circle = Styled.div`
@@ -100,12 +103,7 @@ export const Circle = Styled.div`
     align-items:center;
     box-shadow:2px 2px 5px ${props => props.bg || props.theme.bg} inset,
               -2px -2px 5px ${props => props.bg || props.theme.bg} inset;
-    margin:${({ my }) => my || 0}rem ${({ mx }) => mx || 0} rem;
     svg{
         font-size:${({ size }) => size || 0}%;
-    }
-
-    @media screen and (max-width:500px){
-        margin-right:10px;
     }
 `

@@ -2,7 +2,7 @@ import Styled from 'styled-components';
 import { SubContainer } from "../../GlobalStyle";
 
 export const PjtCard = Styled.div`
-    width:${({ width }) => width || 15}rem;
+    width:${({ width }) => width || 17}rem;
     height:${({ height }) => height || 10}rem;
     background-color:${props => props.bg || props.theme.cardBG};
     margin:${({ m }) => m || 0}rem;
@@ -22,10 +22,12 @@ export const PjtCard = Styled.div`
         height:400px;
     }
     @media screen and (max-width:500px){
-        width:90%;
+        width:320px;
+        height:400px;
     }
 `
 export const PjtContainer = Styled(SubContainer)`
+
 `
 export const PjtImg = Styled.div`
     width:${({ width }) => width || '100'}%;

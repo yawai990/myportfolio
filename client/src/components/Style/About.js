@@ -12,7 +12,9 @@ export const Page = Styled(Container)`
     border-bottom-right-radius: 15%;
 
     @media screen and (max-width:500px){
+        height:fit-content;
         flex-direction:column;
+        padding-bottom:0.3rem;
         border-bottom-left-radius: 20%;
         border-bottom-right-radius: 0%;
     }
@@ -40,5 +42,11 @@ export const CardAbout = Styled.div`
     font-weight:100;
     p{
         padding:0.5rem;
+    }
+    @media screen and (max-width:500px){
+        height:fit-content;
+        p{
+            margin-bottom:1rem;
+        }
     }
 `

@@ -2,7 +2,7 @@ import Styled, { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap')
-*{
+*,body{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -27,7 +27,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:${props => props.theme.bg};
+    background:${props => props.bg || props.theme.bg};
     color:${props => props.theme.mainBG};
     text-decoration:none;   
     overflow:hidden;
@@ -63,14 +63,14 @@ export const Container = Styled.div`
     flex-direction:${({ fd }) => fd && fd};
     padding:${({ px, py }) => `${py || 0}rem ${px || 0}rem`};
     position:relative;
-    margin:0.5rem 0;
+    margin:${({ my, mx }) => `${my || 0.5}rem ${mx || 0}rem`};
 
 `;
 export const SubContainer = Styled.div`
     width:${({ width }) => width && width}%;
     height:${({ height }) => height}rem;
     background-color:${props => props.bg || 'none'};
-    margin:${({ my }) => my || 0}rem ${({ mx }) => mx || 0}rem;
+    margin:${({ my, mx }) => `${my || 0}rem ${mx || 0}rem`};
     margin-left:${({ ml }) => ml || 0}rem;
     padding:${({ px, py }) => `${py || 0}rem ${px || 0}rem`} ;
     display:${({ flex }) => flex && flex};
@@ -93,7 +93,7 @@ export const Header = Styled.h1`
     font-size:${({ fs }) => fs || '22'}px;
     font-weight:${({ fw }) => fw && fw};
     color:${props => props.text || props.theme.headColor};
-    margin:${({ my }) => my || 0}rem ${({ mx }) => mx || 0}rem;
+    margin:${({ my, mx }) => `${my || 0}rem ${mx || 0}rem`};
 `;
 
 export const Button = Styled.button`
@@ -103,7 +103,7 @@ export const Button = Styled.button`
     cursor:pointer;
     text-transform: uppercase;
     padding:${({ px, py }) => `${py || 5}px ${px || 10}px`} ;
-    margin:${({ my }) => my || 0}rem ${({ mx }) => mx || 0}rem;
+    margin:${({ my, mx }) => `${my || 0}rem ${mx || 0}rem`};
     border-radius:4px;
     letter-spacing:1px;
 `

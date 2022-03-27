@@ -6,7 +6,7 @@ import { image } from '../constants';
 import { AppWrap } from '../../HOC';
 import axios from "axios";
 
-const API = axios.create({ baseURL: 'https://yawaiaung.herokuapp.com' })
+const API = axios.create({ baseURL: 'https://yawaiaung.herokuapp.com/' })
 
 const initMessage = {
     name: '',
@@ -54,12 +54,10 @@ const Contact = () => {
             errMessage1.style.display = 'none';
             errMessage2.style.display = 'none';
 
-            API.post('/sendmail', sendData);
-
-            setTimeout(() => {
-                alert('email send')
-            }, 3000);
-
+            API.post('/sendmail', sendData)
+                .then(data => {
+                    console.log(data)
+                })
         }
         setSendData(initMessage);
     };

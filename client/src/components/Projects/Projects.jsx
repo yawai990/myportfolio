@@ -44,8 +44,8 @@ const Projects = () => {
 
             <PjtContainer flex='flex' justify='center' align='center' py='2'>
                 {filterPjt.map((pjt, ind) => {
-                    return <motion.div key={ind} animate={animateCard}>
-                        <PjtCard width='15' height='20' m='2' bg='white'>
+                    return <motion.div className='motion' key={ind} animate={animateCard}>
+                        <PjtCard height='20' m='2' bg='white'>
                             <PjtImg width='100' height='60'>
                                 <img src={pjt.imgURL} alt="" />
 

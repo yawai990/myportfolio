@@ -53,6 +53,7 @@ export const FormMessage = Styled.textarea`
         color:${props => 'white' || props.theme.color};
         font-size:16px;
         display:block;
+        font-family: 'Noto Sans', sans-serif;
 
         &::placeholder{
             font-size:16px;
