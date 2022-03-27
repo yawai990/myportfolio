@@ -1,8 +1,8 @@
 import Styled, { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap')
-*,body,::before,::after{
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap')
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
